@@ -1,3 +1,7 @@
+## modified distribution
+
+Modified to better handle HUGO.
+
 # JSON Schema Markdown Tools
 
 [![CircleCI](https://circleci.com/gh/adobe/jsonschema2md.svg?style=svg)](https://circleci.com/gh/adobe/jsonschema2md)
@@ -39,12 +43,14 @@ By default, `jsonschema2md` looks for schema files ending in `*.schema.json`. Yo
 The generated documentation can be internationalized. Select the language you want to use for the output using the `-l` parameter.
 
 Supported languages are:
+
 - English
 - German
 
 If you want to provide a translation of your own, [please use GitLocalize](https://gitlocalize.com/repo/3622)
 
 ## Display custom attributes in the property description
+
 `jsonschema2md` displays only the attributes of an property which are defined by the JSON Schema standard. If you want to display additional attributes in the property description you could provide a comma separated list with your custom attributes.
 
 ```bash
@@ -52,6 +58,7 @@ $ jsonschema2md -d examples/schemas -o examples/docs -p version,test
 ```
 
 ## Disable header template
+
 In some cases you do not need a header because it does not provide any useful information. With the `--header` (or `-h`) parameter you can disable the inclusion of headers.
 
 ```bash
@@ -85,17 +92,16 @@ Then add the following to the `"scripts"` section of your `package.json` and ada
 
 If you run `npm install` before running `npm run prepare`, `npm` will install the `@adobe/jsonschema2md` in a `node_modules/.bin` path, even if you did not install the JSON Schema Markdown beforehand.
 
-
 ### With API for Node.js
 
 ```javascript
-const {jsonschema2md} = require('@adobe/jsonschema2md');
-const schema = require('examples/schemas/example.schema.json');
+const { jsonschema2md } = require("@adobe/jsonschema2md");
+const schema = require("examples/schemas/example.schema.json");
 
 const markdown = jsonschema2md(schema, {
   includeReadme: true,
 });
-````
+```
 
 ## Tests
 
@@ -109,8 +115,8 @@ This will run our Jasmine test suite as well as lint the JavaScript according to
 
 ### CI
 
-Continuous integration runs on [CircleCI](https://circleci.com/gh/adobe/jsonschema2md). 
-All pull requests automatically trigger a job that runs the [tests](#tests) by executing the [`config.yml`](.circleci/config.yml). 
+Continuous integration runs on [CircleCI](https://circleci.com/gh/adobe/jsonschema2md).
+All pull requests automatically trigger a job that runs the [tests](#tests) by executing the [`config.yml`](.circleci/config.yml).
 
 ### Code Coverage
 
