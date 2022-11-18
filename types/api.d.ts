@@ -50,7 +50,7 @@ export type MarkdownContent = {
     content?: string;
 };
 export type ReadmeContent = MarkdownContent & {
-    fileName: "README.md";
+    fileName: "_index.md";
 };
 
 /**

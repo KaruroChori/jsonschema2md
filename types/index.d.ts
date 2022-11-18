@@ -24,6 +24,8 @@
  * be skipped if directory is not specified.
  * @param {{ [key:string]: string }} [options.metadata] - (optional) Add metadata elements to
  * .md files.
+ * @param {{ [key:string]: string }} [options.metadataIndex] - (optional) Add metadata elements to
+ * .md index files.
  * @param {string} [options.schemaOut] - (optional) Output JSON Schema files including
  * description and validated examples in the specified folder.
  * @param {boolean} [options.includeReadme=true] - (optional) Generate a README.md file in the
@@ -46,6 +48,9 @@ export function jsonschema2md(schema: JsonSchema | import("../types/api").Schema
     schemaPath?: string;
     outDir?: string;
     metadata?: {
+        [key: string]: string;
+    };
+    metadataIndex?: {
         [key: string]: string;
     };
     schemaOut?: string;
